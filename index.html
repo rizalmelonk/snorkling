@@ -7,13 +7,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#EAF6F7;--card:#FFFFFF;--ink:#0B3340;--muted:#4F6B75;--line:#C9E1E5;
-  --deep:#0B3340;--sea:#12A4B8;--coral:#FF6B57;--on-coral:#1A0B08;--on-deep:#EAF6F7;
+  --bg:EAF6F7;--card:FFFFFF;--ink:0B3340;--muted:4F6B75;--line:C9E1E5;
+  --deep:0B3340;--sea:12A4B8;--coral:FF6B57;--on-coral:1A0B08;--on-deep:EAF6F7;
   --head:"Outfit","Trebuchet MS",system-ui,sans-serif;--body:"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#071D26;--card:#0E2B37;--ink:#E4F3F5;--muted:#93B3BC;--line:#1B4251;--deep:#04141B;--sea:#3CC8DB}}
-:root[data-theme="dark"]{--bg:#071D26;--card:#0E2B37;--ink:#E4F3F5;--muted:#93B3BC;--line:#1B4251;--deep:#04141B;--sea:#3CC8DB}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:071D26;--card:0E2B37;--ink:E4F3F5;--muted:93B3BC;--line:1B4251;--deep:04141B;--sea:3CC8DB}}
+:root[data-theme="dark"]{--bg:071D26;--card:0E2B37;--ink:E4F3F5;--muted:93B3BC;--line1B4251;--deep:04141B;--sea:3CC8DB}
 html{scroll-behavior:smooth;scroll-padding-top:5rem}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
@@ -62,17 +62,17 @@ section{padding:4.5rem 0}
 .gal figure{position:relative;margin:0;border-radius:18px;overflow:hidden;min-height:10rem;background:var(--deep)}
 .gal figure:nth-child(1){grid-column:span 2;min-height:15rem}
 .gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
-.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:2rem 1rem .8rem;font:700 1.05rem var(--head);color:#fff;background:linear-gradient(to top,rgba(4,20,27,.75),transparent);pointer-events:none}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:2rem 1rem .8rem;font:700 1.05rem var(--head);color:fff;background:linear-gradient(to top,rgba(4,20,27,.75),transparent);pointer-events:none}
 .contact{background:var(--deep);color:var(--on-deep);border-radius:24px;padding:3rem 1.5rem;text-align:center}
 .contact p{margin-inline:auto;opacity:.85}
 .contact form{max-width:34rem;margin:1.8rem auto 0;text-align:left;display:grid;gap:1rem}
 .contact label{display:block;font-weight:600;margin-bottom:.3rem}
-.contact input,.contact select,.contact textarea{width:100%;font:inherit;padding:.75rem 1rem;border-radius:12px;border:1.5px solid transparent;background:#EAF6F7;color:#0B3340;color-scheme:light}
+.contact input,.contact select,.contact textarea{width:100%;font:inherit;padding:.75rem 1rem;border-radius:12px;border:1.5px solid transparent;background:EAF6F7;color:0B3340;color-scheme:light}
 .contact textarea{resize:vertical;min-height:4.5rem}
 .contact .row{display:grid;gap:1rem}
 .contact .est{background:rgba(255,255,255,.1);border-radius:14px;padding:1rem 1.2rem}
 .contact .est b{display:block;font:800 1.8rem var(--head)}
-.contact .err{color:#FFB4A8;min-height:1.4em;margin:0}
+.contact .err{color:FFB4A8;min-height:1.4em;margin:0}
 .contact .btn{text-align:center}
 footer{padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.95rem}
 .lb{position:fixed;inset:0;z-index:50;background:rgba(4,20,27,.92);display:none;align-items:center;justify-content:center;padding:1rem;cursor:zoom-out}
@@ -91,7 +91,7 @@ footer{padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.95rem
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="logo" href="#atas"><img src="pian-guide-logo-light.svg" alt="PIAN GUIDE"></a>
+  <a class="logo" href="atas"><img src="pian-guide-logo-light.svg" alt="PIAN GUIDE"></a>
   <nav aria-label="Menu utama">
     <a href="trip" class="on">Trip Snorkeling</a><a href="biaya">Biaya</a><a href="galeri">Galeri</a><a href="kontak">Pesan</a>
   </nav>
