@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Pesan Trip - PIAN GUIDE</title>
+
+<link rel="stylesheet"
+      href="style.css">
+
+</head>
+
+<body>
+
+<header class="top">
+
+<div class="wrap">
+
+<a href="index.html"
+   class="logo">
+PIAN <span>GUIDE</span>
+</a>
+
+<nav>
+
+<a href="index.html">
+Trip Snorkeling
+</a>
+
+<a href="biaya.html">
+Biaya
+</a>
+
+<a href="galeri.html">
+Galeri
+</a>
+
+<a href="pesan.html"
+   class="active">
+Pesan
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<section class="page-title">
+
+<div class="wrap">
+
+<h1>
+Pesan Trip
+</h1>
+
+<p>
+Isi data perjalanan Anda,
+kemudian kirim melalui WhatsApp.
+</p>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="wrap">
+
+<div class="contact">
+
+<h2>
+Form Pemesanan
+</h2>
+
+<p>
+Lengkapi data berikut agar kami
+dapat mengonfirmasi perjalanan Anda.
+</p>
+
+
+<form
+onsubmit="return false"
+>
+
+
+<div>
+
+<label for="nama">
+Nama Lengkap
+</label>
+
+<input
+id="nama"
+type="text"
+placeholder="Masukkan nama lengkap"
+autocomplete="name"
+>
+
+</div>
+
+
+<div>
+
+<label for="paket">
+Paket Trip
+</label>
+
+<select id="paket">
+
+<option value="Price list">
+Price List
+</option>
+
+<option value="3 Gili Sekotong">
+3 Gili Sekotong
+</option>
+
+<option value="Secret Gilis Lombok">
+Secret Gilis Lombok
+</option>
+
+</select>
+
+</div>
+
+
+<div class="row">
+
+
+<div>
+
+<label for="tanggal">
+Tanggal Trip
+</label>
+
+<input
+id="tanggal"
+type="date"
+>
+
+</div>
+
+
+<div>
+
+<label for="jumlahOrang">
+Jumlah Orang
+</label>
+
+<input
+id="jumlahOrang"
+type="number"
+min="1"
+max="100"
+value="2"
+>
+
+</div>
+
+
+</div>
+
+
+<div>
+
+<label for="catatan">
+Catatan / Permintaan Khusus
+</label>
+
+<textarea
+id="catatan"
+placeholder="Contoh: titik jemput, permintaan khusus, dll."
+></textarea>
+
+</div>
+
+
+<div class="est">
+
+Perkiraan Total
+
+<b id="estimasi">
+-
+</b>
+
+<span id="keterangan">
+</span>
+
+</div>
+
+
+<p
+class="err"
+id="error">
+</p>
+
+
+<a
+id="kirim"
+href="#"
+target="_blank"
+class="btn"
+>
+Kirim ke WhatsApp
+</a>
+
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="wrap">
+
+PIAN GUIDE · Buka setiap hari
+06.00–18.00
+
+</div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
