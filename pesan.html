@@ -239,7 +239,93 @@ PIAN GUIDE · Buka setiap hari
 </footer>
 
 
-<script src="script.js"></script>
+<script>
+(function () {
+  var HARGA_PER_ORANG = 350000;
+  var NOMOR_WA = '62XXXXXXXXXXX'; // ganti dengan nomor WhatsApp Anda (format 62, tanpa + dan tanpa 0 di depan)
+
+  var nama = document.getElementById('nama');
+  var paket = document.getElementById('paket');
+  var tanggal = document.getElementById('tanggal');
+  var jumlahOrang = document.getElementById('jumlahOrang');
+  var catatan = document.getElementById('catatan');
+  var estimasi = document.getElementById('estimasi');
+  var keterangan = document.getElementById('keterangan');
+  var error = document.getElementById('error');
+  var kirim = document.getElementById('kirim');
+
+  function rupiah(n) {
+    return 'Rp ' + n.toLocaleString('id-ID');
+  }
+
+  function ambilJumlah() {
+    var j = parseInt(jumlahOrang.value, 10);
+    if (isNaN(j) || j < 1) j = 1;
+    if (j > 100) j = 100;
+    return j;
+  }
+
+  function formatTanggal(v) {
+    if (!v) return '-';
+    var p = v.split('-');
+    var d = new Date(parseInt(p[0], 10), parseInt(p[1], 10) - 1, parseInt(p[2], 10));
+    return d.toLocaleDateString('id-ID', {
+      weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+    });
+  }
+
+  function buatLink() {
+    var jumlah = ambilJumlah();
+    var total = HARGA_PER_ORANG * jumlah;
+    var pesan =
+      'Halo PIAN GUIDE, saya ingin memesan trip.\n\n' +
+      'Nama: ' + nama.value.trim() + '\n' +
+      'Paket: ' + paket.value + '\n' +
+      'Tanggal: ' + formatTanggal(tanggal.value) + '\n' +
+      'Jumlah orang: ' + jumlah + '\n' +
+      'Perkiraan total: ' + rupiah(total) + ' (' + rupiah(HARGA_PER_ORANG) + '/orang)\n' +
+      'Catatan: ' + (catatan.value.trim() || '-');
+    return 'https://wa.me/' + NOMOR_WA + '?text=' + encodeURIComponent(pesan);
+  }
+
+  function hitung() {
+    var jumlah = ambilJumlah();
+    var total = HARGA_PER_ORANG * jumlah;
+    estimasi.textContent = rupiah(total);
+    keterangan.textContent = ' (' + rupiah(HARGA_PER_ORANG) + ' × ' + jumlah + ' orang)';
+    kirim.href = buatLink();
+  }
+
+  jumlahOrang.addEventListener('input', hitung);
+  jumlahOrang.addEventListener('change', function () {
+    jumlahOrang.value = ambilJumlah();
+    hitung();
+  });
+  [nama, paket, tanggal, catatan].forEach(function (el) {
+    el.addEventListener('input', hitung);
+    el.addEventListener('change', hitung);
+  });
+
+  kirim.addEventListener('click', function (e) {
+    error.textContent = '';
+    if (!nama.value.trim()) {
+      e.preventDefault();
+      error.textContent = 'Nama lengkap wajib diisi.';
+      nama.focus();
+      return;
+    }
+    if (!tanggal.value) {
+      e.preventDefault();
+      error.textContent = 'Tanggal trip wajib dipilih.';
+      tanggal.focus();
+      return;
+    }
+    kirim.href = buatLink();
+  });
+
+  hitung();
+})();
+</script>
 
 </body>
 
