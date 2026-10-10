@@ -142,9 +142,36 @@ footer{padding:2rem 0 3rem;text-align:center;color:var(--muted);font-size:.95rem
   </form>
 </div>
 
-<!-- <script> kalkulator tetap sama, tidak diubah -->
-<!-- <script> kalkulator tetap sama, tidak diubah -->
+<script>
+(function () {
+  var HARGA_PER_ORANG = 350000;
+  var input = document.getElementById('jm');
+  var pp = document.getElementById('pp');
+  var tt = document.getElementById('tt');
 
+  function rupiah(n) {
+    return 'Rp ' + n.toLocaleString('id-ID');
+  }
+
+  function hitung() {
+    var jumlah = parseInt(input.value, 10);
+    if (isNaN(jumlah) || jumlah < 1) jumlah = 1;
+    if (jumlah > 100) jumlah = 100;
+    pp.textContent = rupiah(HARGA_PER_ORANG);
+    tt.textContent = rupiah(HARGA_PER_ORANG * jumlah);
+  }
+
+  input.addEventListener('input', hitung);
+  input.addEventListener('change', function () {
+    var v = parseInt(input.value, 10);
+    if (isNaN(v) || v < 1) input.value = 1;
+    if (v > 100) input.value = 100;
+    hitung();
+  });
+
+  hitung();
+})();
+</script>
   <section id="galeri.html"><div class="wrap">
     <h2>Galeri</h2>
     <p class="muted">Foto perjalanan snorkeling bersama kami. Ketuk foto untuk memperbesar.</p>
